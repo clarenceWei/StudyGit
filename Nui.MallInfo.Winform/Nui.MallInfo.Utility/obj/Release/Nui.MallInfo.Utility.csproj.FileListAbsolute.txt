@@ -1,9 +1,0 @@
-E:\weizn_soft\我的项目\Nui.MallInfo.Winform\Nui.MallInfo.Utility\bin\Release\Nui.MallInfo.Utility.dll
-E:\weizn_soft\我的项目\Nui.MallInfo.Winform\Nui.MallInfo.Utility\bin\Release\Nui.MallInfo.Utility.pdb
-E:\weizn_soft\我的项目\Nui.MallInfo.Winform\Nui.MallInfo.Utility\bin\Release\Fx678Member.Framework.dll
-E:\weizn_soft\我的项目\Nui.MallInfo.Winform\Nui.MallInfo.Utility\bin\Release\log4net.dll
-E:\weizn_soft\我的项目\Nui.MallInfo.Winform\Nui.MallInfo.Utility\bin\Release\Nevron.Presentation.dll
-E:\weizn_soft\我的项目\Nui.MallInfo.Winform\Nui.MallInfo.Utility\bin\Release\Nevron.System.dll
-E:\weizn_soft\我的项目\Nui.MallInfo.Winform\Nui.MallInfo.Utility\obj\Release\Nui.MallInfo.Utility.dll
-E:\weizn_soft\我的项目\Nui.MallInfo.Winform\Nui.MallInfo.Utility\obj\Release\Nui.MallInfo.Utility.pdb
-E:\weizn_soft\我的项目\Nui.MallInfo.Winform\Nui.MallInfo.Utility\bin\Release\Aspose.Cells.dll

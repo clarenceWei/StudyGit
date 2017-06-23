@@ -1,7 +1,0 @@
-E:\weizn_soft\我的项目\Nui.MallInfo.Winform\Nui.MallInfo.IDAL\bin\Release\Nui.MallInfo.IDAL.dll
-E:\weizn_soft\我的项目\Nui.MallInfo.Winform\Nui.MallInfo.IDAL\bin\Release\Nui.MallInfo.IDAL.pdb
-E:\weizn_soft\我的项目\Nui.MallInfo.Winform\Nui.MallInfo.IDAL\bin\Release\Nui.MallInfo.Model.dll
-E:\weizn_soft\我的项目\Nui.MallInfo.Winform\Nui.MallInfo.IDAL\bin\Release\Nui.MallInfo.Model.pdb
-E:\weizn_soft\我的项目\Nui.MallInfo.Winform\Nui.MallInfo.IDAL\obj\Release\Nui.MallInfo.IDAL.dll
-E:\weizn_soft\我的项目\Nui.MallInfo.Winform\Nui.MallInfo.IDAL\obj\Release\Nui.MallInfo.IDAL.pdb
-E:\weizn_soft\我的项目\Nui.MallInfo.Winform\Nui.MallInfo.IDAL\obj\Release\Nui.MallInfo.IDAL.csprojResolveAssemblyReference.cache

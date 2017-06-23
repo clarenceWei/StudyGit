@@ -1,4 +1,0 @@
-E:\weizn_soft\我的项目\Nui.MallInfo.Winform\Nui.MallInfo.Model\bin\Release\Nui.MallInfo.Model.dll
-E:\weizn_soft\我的项目\Nui.MallInfo.Winform\Nui.MallInfo.Model\bin\Release\Nui.MallInfo.Model.pdb
-E:\weizn_soft\我的项目\Nui.MallInfo.Winform\Nui.MallInfo.Model\obj\Release\Nui.MallInfo.Model.dll
-E:\weizn_soft\我的项目\Nui.MallInfo.Winform\Nui.MallInfo.Model\obj\Release\Nui.MallInfo.Model.pdb
