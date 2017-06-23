@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MALLDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="T_BASE_CONFIG">
+          <Key>
+            <PropertyRef Name="CONFIGID" />
+          </Key>
+          <Property Name="CONFIGID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CONFIG_TYPE" Type="varchar" MaxLength="20" />
+          <Property Name="CONFIG_CODE" Type="varchar" MaxLength="20" />
+          <Property Name="CONFIG_NAME" Type="varchar" MaxLength="80" />
+          <Property Name="CONFIG_VALUE" Type="varchar" MaxLength="80" />
+          <Property Name="MEMO_TEXT" Type="varchar" MaxLength="20" />
+          <Property Name="EDIT_USER" Type="varchar" MaxLength="20" />
+          <Property Name="EDIT_DATE" Type="datetime" />
+        </EntityType>
+        <EntityType Name="T_BASE_NOTICE">
+          <Key>
+            <PropertyRef Name="NOTICEID" />
+          </Key>
+          <Property Name="NOTICEID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TITLE" Type="varchar" MaxLength="200" />
+          <Property Name="CONTENTS" Type="varchar" MaxLength="8000" />
+          <Property Name="PUBLISHER" Type="varchar" MaxLength="200" />
+          <Property Name="SENDTIME" Type="datetime" />
+          <Property Name="EXPIPETIME" Type="datetime" />
+          <Property Name="EDIT_USER" Type="varchar" MaxLength="20" />
+          <Property Name="EDIT_DATE" Type="datetime" />
+        </EntityType>
+        <EntityType Name="T_SYS_EVENT">
+          <Key>
+            <PropertyRef Name="EVENTID" />
+          </Key>
+          <Property Name="EVENTID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="E_U_ACCOUNT" Type="varchar" MaxLength="20" />
+          <Property Name="E__U_NAME" Type="varchar" MaxLength="20" />
+          <Property Name="E_DATETIME" Type="datetime" Nullable="false" />
+          <Property Name="E_M_NAME" Type="varchar" MaxLength="50" />
+          <Property Name="E_M_CODE" Type="varchar" MaxLength="6" />
+          <Property Name="E_FROM" Type="varchar" MaxLength="500" />
+          <Property Name="E_TYPE" Type="int" Nullable="false" />
+          <Property Name="E_IP" Type="varchar" MaxLength="50" />
+          <Property Name="E_RECORD" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="T_SYS_MODULE">
+          <Key>
+            <PropertyRef Name="MODULEID" />
+          </Key>
+          <Property Name="MODULEID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="M_PARENTID" Type="int" />
+          <Property Name="M_CODE" Type="varchar" MaxLength="20" />
+          <Property Name="M_CNAME" Type="varchar" MaxLength="50" />
+          <Property Name="M_DIRECTORY" Type="varchar" MaxLength="50" />
+          <Property Name="M_LEVEL" Type="varchar" MaxLength="4" />
+          <Property Name="M_SORT" Type="int" />
+          <Property Name="M_CLOSE" Type="int" />
+          <Property Name="M_ICON" Type="varchar" MaxLength="50" />
+          <Property Name="MEMO_TEXT" Type="varchar" MaxLength="20" />
+          <Property Name="EDIT_USER" Type="varchar" MaxLength="20" />
+          <Property Name="EDIT_DATE" Type="datetime" />
+        </EntityType>
+        <EntityType Name="T_SYS_ROLEPERMISSION">
+          <Key>
+            <PropertyRef Name="PERMISSIONID" />
+          </Key>
+          <Property Name="PERMISSIONID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ROLEID" Type="int" />
+          <Property Name="MODULEID" Type="int" />
+        </EntityType>
+        <EntityType Name="T_SYS_ROLES">
+          <Key>
+            <PropertyRef Name="ROLEID" />
+          </Key>
+          <Property Name="ROLEID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="R_ROLENAME" Type="varchar" MaxLength="50" />
+          <Property Name="R_DESCRIPTION" Type="varchar" MaxLength="255" />
+          <Property Name="MEMO_TEXT" Type="varchar" MaxLength="20" />
+          <Property Name="EDIT_USER" Type="varchar" MaxLength="20" />
+          <Property Name="EDIT_DATE" Type="datetime" />
+        </EntityType>
+        <EntityType Name="T_SYS_TABLEFIELDS">
+          <Key>
+            <PropertyRef Name="TABLEFIELDSID" />
+          </Key>
+          <Property Name="TABLEFIELDSID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TABLENAME" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FIELDNAME" Type="varchar" MaxLength="50" />
+          <Property Name="CAPTION" Type="varchar" MaxLength="50" />
+          <Property Name="CANCHOOSE" Type="int" />
+          <Property Name="MEMO_TEXT" Type="varchar" MaxLength="20" />
+          <Property Name="EDIT_USER" Type="varchar" MaxLength="20" />
+          <Property Name="EDIT_DATE" Type="datetime" />
+        </EntityType>
+        <EntityType Name="T_SYS_USER">
+          <Key>
+            <PropertyRef Name="USERID" />
+          </Key>
+          <Property Name="USERID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="U_ACCOUNT" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="U_NAME" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="U_PASSWORD" Type="varchar" MaxLength="32" />
+          <Property Name="U_PHONE" Type="varchar" MaxLength="80" />
+          <Property Name="U_EMAIL" Type="varchar" MaxLength="100" />
+          <Property Name="U_ROLEID" Type="int" />
+          <Property Name="U_ROLENAME" Type="varchar" MaxLength="50" />
+          <Property Name="U_TYPE" Type="int" />
+          <Property Name="U_STATUS" Type="int" />
+          <Property Name="CREATE_DATE" Type="datetime" />
+          <Property Name="MEMO_TEXT" Type="varchar" MaxLength="20" />
+          <Property Name="EDIT_USER" Type="varchar" MaxLength="20" />
+          <Property Name="EDIT_DATE" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="MALLDBModelStoreContainer">
+          <EntitySet Name="T_BASE_CONFIG" EntityType="Self.T_BASE_CONFIG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_BASE_NOTICE" EntityType="Self.T_BASE_NOTICE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_SYS_EVENT" EntityType="Self.T_SYS_EVENT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_SYS_MODULE" EntityType="Self.T_SYS_MODULE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_SYS_ROLEPERMISSION" EntityType="Self.T_SYS_ROLEPERMISSION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_SYS_ROLES" EntityType="Self.T_SYS_ROLES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_SYS_TABLEFIELDS" EntityType="Self.T_SYS_TABLEFIELDS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_SYS_USER" EntityType="Self.T_SYS_USER" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MALLDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="MALLDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="T_BASE_CONFIG" EntityType="MALLDBModel.T_BASE_CONFIG" />
+          <EntitySet Name="T_BASE_NOTICE" EntityType="MALLDBModel.T_BASE_NOTICE" />
+          <EntitySet Name="T_SYS_EVENT" EntityType="MALLDBModel.T_SYS_EVENT" />
+          <EntitySet Name="T_SYS_MODULE" EntityType="MALLDBModel.T_SYS_MODULE" />
+          <EntitySet Name="T_SYS_ROLEPERMISSION" EntityType="MALLDBModel.T_SYS_ROLEPERMISSION" />
+          <EntitySet Name="T_SYS_ROLES" EntityType="MALLDBModel.T_SYS_ROLES" />
+          <EntitySet Name="T_SYS_TABLEFIELDS" EntityType="MALLDBModel.T_SYS_TABLEFIELDS" />
+          <EntitySet Name="T_SYS_USER" EntityType="MALLDBModel.T_SYS_USER" />
+        </EntityContainer>
+        <EntityType Name="T_BASE_CONFIG">
+          <Key>
+            <PropertyRef Name="CONFIGID" />
+          </Key>
+          <Property Name="CONFIGID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CONFIG_TYPE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CONFIG_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CONFIG_NAME" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="CONFIG_VALUE" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="MEMO_TEXT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EDIT_USER" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EDIT_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="T_BASE_NOTICE">
+          <Key>
+            <PropertyRef Name="NOTICEID" />
+          </Key>
+          <Property Name="NOTICEID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TITLE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CONTENTS" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="PUBLISHER" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="SENDTIME" Type="DateTime" Precision="3" />
+          <Property Name="EXPIPETIME" Type="DateTime" Precision="3" />
+          <Property Name="EDIT_USER" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EDIT_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="T_SYS_EVENT">
+          <Key>
+            <PropertyRef Name="EVENTID" />
+          </Key>
+          <Property Name="EVENTID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="E_U_ACCOUNT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="E__U_NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="E_DATETIME" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="E_M_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="E_M_CODE" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="E_FROM" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="E_TYPE" Type="Int32" Nullable="false" />
+          <Property Name="E_IP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="E_RECORD" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="T_SYS_MODULE">
+          <Key>
+            <PropertyRef Name="MODULEID" />
+          </Key>
+          <Property Name="MODULEID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="M_PARENTID" Type="Int32" />
+          <Property Name="M_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="M_CNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="M_DIRECTORY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="M_LEVEL" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="M_SORT" Type="Int32" />
+          <Property Name="M_CLOSE" Type="Int32" />
+          <Property Name="M_ICON" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MEMO_TEXT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EDIT_USER" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EDIT_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="T_SYS_ROLEPERMISSION">
+          <Key>
+            <PropertyRef Name="PERMISSIONID" />
+          </Key>
+          <Property Name="PERMISSIONID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ROLEID" Type="Int32" />
+          <Property Name="MODULEID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="T_SYS_ROLES">
+          <Key>
+            <PropertyRef Name="ROLEID" />
+          </Key>
+          <Property Name="ROLEID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="R_ROLENAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="R_DESCRIPTION" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="MEMO_TEXT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EDIT_USER" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EDIT_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="T_SYS_TABLEFIELDS">
+          <Key>
+            <PropertyRef Name="TABLEFIELDSID" />
+          </Key>
+          <Property Name="TABLEFIELDSID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TABLENAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FIELDNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CAPTION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CANCHOOSE" Type="Int32" />
+          <Property Name="MEMO_TEXT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EDIT_USER" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EDIT_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="T_SYS_USER">
+          <Key>
+            <PropertyRef Name="USERID" />
+          </Key>
+          <Property Name="USERID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="U_ACCOUNT" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="U_NAME" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="U_PASSWORD" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="U_PHONE" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="U_EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="U_ROLEID" Type="Int32" />
+          <Property Name="U_ROLENAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="U_TYPE" Type="Int32" />
+          <Property Name="U_STATUS" Type="Int32" />
+          <Property Name="CREATE_DATE" Type="DateTime" Precision="3" />
+          <Property Name="MEMO_TEXT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EDIT_USER" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EDIT_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MALLDBModelStoreContainer" CdmEntityContainer="MALLDBEntities">
+          <EntitySetMapping Name="T_BASE_CONFIG">
+            <EntityTypeMapping TypeName="MALLDBModel.T_BASE_CONFIG">
+              <MappingFragment StoreEntitySet="T_BASE_CONFIG">
+                <ScalarProperty Name="EDIT_DATE" ColumnName="EDIT_DATE" />
+                <ScalarProperty Name="EDIT_USER" ColumnName="EDIT_USER" />
+                <ScalarProperty Name="MEMO_TEXT" ColumnName="MEMO_TEXT" />
+                <ScalarProperty Name="CONFIG_VALUE" ColumnName="CONFIG_VALUE" />
+                <ScalarProperty Name="CONFIG_NAME" ColumnName="CONFIG_NAME" />
+                <ScalarProperty Name="CONFIG_CODE" ColumnName="CONFIG_CODE" />
+                <ScalarProperty Name="CONFIG_TYPE" ColumnName="CONFIG_TYPE" />
+                <ScalarProperty Name="CONFIGID" ColumnName="CONFIGID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_BASE_NOTICE">
+            <EntityTypeMapping TypeName="MALLDBModel.T_BASE_NOTICE">
+              <MappingFragment StoreEntitySet="T_BASE_NOTICE">
+                <ScalarProperty Name="EDIT_DATE" ColumnName="EDIT_DATE" />
+                <ScalarProperty Name="EDIT_USER" ColumnName="EDIT_USER" />
+                <ScalarProperty Name="EXPIPETIME" ColumnName="EXPIPETIME" />
+                <ScalarProperty Name="SENDTIME" ColumnName="SENDTIME" />
+                <ScalarProperty Name="PUBLISHER" ColumnName="PUBLISHER" />
+                <ScalarProperty Name="CONTENTS" ColumnName="CONTENTS" />
+                <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+                <ScalarProperty Name="NOTICEID" ColumnName="NOTICEID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_SYS_EVENT">
+            <EntityTypeMapping TypeName="MALLDBModel.T_SYS_EVENT">
+              <MappingFragment StoreEntitySet="T_SYS_EVENT">
+                <ScalarProperty Name="E_RECORD" ColumnName="E_RECORD" />
+                <ScalarProperty Name="E_IP" ColumnName="E_IP" />
+                <ScalarProperty Name="E_TYPE" ColumnName="E_TYPE" />
+                <ScalarProperty Name="E_FROM" ColumnName="E_FROM" />
+                <ScalarProperty Name="E_M_CODE" ColumnName="E_M_CODE" />
+                <ScalarProperty Name="E_M_NAME" ColumnName="E_M_NAME" />
+                <ScalarProperty Name="E_DATETIME" ColumnName="E_DATETIME" />
+                <ScalarProperty Name="E__U_NAME" ColumnName="E__U_NAME" />
+                <ScalarProperty Name="E_U_ACCOUNT" ColumnName="E_U_ACCOUNT" />
+                <ScalarProperty Name="EVENTID" ColumnName="EVENTID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_SYS_MODULE">
+            <EntityTypeMapping TypeName="MALLDBModel.T_SYS_MODULE">
+              <MappingFragment StoreEntitySet="T_SYS_MODULE">
+                <ScalarProperty Name="EDIT_DATE" ColumnName="EDIT_DATE" />
+                <ScalarProperty Name="EDIT_USER" ColumnName="EDIT_USER" />
+                <ScalarProperty Name="MEMO_TEXT" ColumnName="MEMO_TEXT" />
+                <ScalarProperty Name="M_ICON" ColumnName="M_ICON" />
+                <ScalarProperty Name="M_CLOSE" ColumnName="M_CLOSE" />
+                <ScalarProperty Name="M_SORT" ColumnName="M_SORT" />
+                <ScalarProperty Name="M_LEVEL" ColumnName="M_LEVEL" />
+                <ScalarProperty Name="M_DIRECTORY" ColumnName="M_DIRECTORY" />
+                <ScalarProperty Name="M_CNAME" ColumnName="M_CNAME" />
+                <ScalarProperty Name="M_CODE" ColumnName="M_CODE" />
+                <ScalarProperty Name="M_PARENTID" ColumnName="M_PARENTID" />
+                <ScalarProperty Name="MODULEID" ColumnName="MODULEID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_SYS_ROLEPERMISSION">
+            <EntityTypeMapping TypeName="MALLDBModel.T_SYS_ROLEPERMISSION">
+              <MappingFragment StoreEntitySet="T_SYS_ROLEPERMISSION">
+                <ScalarProperty Name="MODULEID" ColumnName="MODULEID" />
+                <ScalarProperty Name="ROLEID" ColumnName="ROLEID" />
+                <ScalarProperty Name="PERMISSIONID" ColumnName="PERMISSIONID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_SYS_ROLES">
+            <EntityTypeMapping TypeName="MALLDBModel.T_SYS_ROLES">
+              <MappingFragment StoreEntitySet="T_SYS_ROLES">
+                <ScalarProperty Name="EDIT_DATE" ColumnName="EDIT_DATE" />
+                <ScalarProperty Name="EDIT_USER" ColumnName="EDIT_USER" />
+                <ScalarProperty Name="MEMO_TEXT" ColumnName="MEMO_TEXT" />
+                <ScalarProperty Name="R_DESCRIPTION" ColumnName="R_DESCRIPTION" />
+                <ScalarProperty Name="R_ROLENAME" ColumnName="R_ROLENAME" />
+                <ScalarProperty Name="ROLEID" ColumnName="ROLEID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_SYS_TABLEFIELDS">
+            <EntityTypeMapping TypeName="MALLDBModel.T_SYS_TABLEFIELDS">
+              <MappingFragment StoreEntitySet="T_SYS_TABLEFIELDS">
+                <ScalarProperty Name="EDIT_DATE" ColumnName="EDIT_DATE" />
+                <ScalarProperty Name="EDIT_USER" ColumnName="EDIT_USER" />
+                <ScalarProperty Name="MEMO_TEXT" ColumnName="MEMO_TEXT" />
+                <ScalarProperty Name="CANCHOOSE" ColumnName="CANCHOOSE" />
+                <ScalarProperty Name="CAPTION" ColumnName="CAPTION" />
+                <ScalarProperty Name="FIELDNAME" ColumnName="FIELDNAME" />
+                <ScalarProperty Name="TABLENAME" ColumnName="TABLENAME" />
+                <ScalarProperty Name="TABLEFIELDSID" ColumnName="TABLEFIELDSID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_SYS_USER">
+            <EntityTypeMapping TypeName="MALLDBModel.T_SYS_USER">
+              <MappingFragment StoreEntitySet="T_SYS_USER">
+                <ScalarProperty Name="EDIT_DATE" ColumnName="EDIT_DATE" />
+                <ScalarProperty Name="EDIT_USER" ColumnName="EDIT_USER" />
+                <ScalarProperty Name="MEMO_TEXT" ColumnName="MEMO_TEXT" />
+                <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+                <ScalarProperty Name="U_STATUS" ColumnName="U_STATUS" />
+                <ScalarProperty Name="U_TYPE" ColumnName="U_TYPE" />
+                <ScalarProperty Name="U_ROLENAME" ColumnName="U_ROLENAME" />
+                <ScalarProperty Name="U_ROLEID" ColumnName="U_ROLEID" />
+                <ScalarProperty Name="U_EMAIL" ColumnName="U_EMAIL" />
+                <ScalarProperty Name="U_PHONE" ColumnName="U_PHONE" />
+                <ScalarProperty Name="U_PASSWORD" ColumnName="U_PASSWORD" />
+                <ScalarProperty Name="U_NAME" ColumnName="U_NAME" />
+                <ScalarProperty Name="U_ACCOUNT" ColumnName="U_ACCOUNT" />
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MALLDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="MALLDBEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="T_BASE_CONFIG" EntityType="MALLDBModel.T_BASE_CONFIG" />
+    <EntitySet Name="T_BASE_NOTICE" EntityType="MALLDBModel.T_BASE_NOTICE" />
+    <EntitySet Name="T_SYS_EVENT" EntityType="MALLDBModel.T_SYS_EVENT" />
+    <EntitySet Name="T_SYS_MODULE" EntityType="MALLDBModel.T_SYS_MODULE" />
+    <EntitySet Name="T_SYS_ROLEPERMISSION" EntityType="MALLDBModel.T_SYS_ROLEPERMISSION" />
+    <EntitySet Name="T_SYS_ROLES" EntityType="MALLDBModel.T_SYS_ROLES" />
+    <EntitySet Name="T_SYS_TABLEFIELDS" EntityType="MALLDBModel.T_SYS_TABLEFIELDS" />
+    <EntitySet Name="T_SYS_USER" EntityType="MALLDBModel.T_SYS_USER" />
+  </EntityContainer>
+  <EntityType Name="T_BASE_CONFIG">
+    <Key>
+      <PropertyRef Name="CONFIGID" />
+    </Key>
+    <Property Name="CONFIGID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CONFIG_TYPE" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="CONFIG_CODE" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="CONFIG_NAME" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+    <Property Name="CONFIG_VALUE" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+    <Property Name="MEMO_TEXT" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="EDIT_USER" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="EDIT_DATE" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="T_BASE_NOTICE">
+    <Key>
+      <PropertyRef Name="NOTICEID" />
+    </Key>
+    <Property Name="NOTICEID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TITLE" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="CONTENTS" Type="String" MaxLength="8000" Unicode="false" FixedLength="false" />
+    <Property Name="PUBLISHER" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="SENDTIME" Type="DateTime" />
+    <Property Name="EXPIPETIME" Type="DateTime" />
+    <Property Name="EDIT_USER" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="EDIT_DATE" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="T_SYS_EVENT">
+    <Key>
+      <PropertyRef Name="EVENTID" />
+    </Key>
+    <Property Name="EVENTID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="E_U_ACCOUNT" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="E__U_NAME" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="E_DATETIME" Type="DateTime" Nullable="false" />
+    <Property Name="E_M_NAME" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="E_M_CODE" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="E_FROM" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="E_TYPE" Type="Int32" Nullable="false" />
+    <Property Name="E_IP" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="E_RECORD" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="T_SYS_MODULE">
+    <Key>
+      <PropertyRef Name="MODULEID" />
+    </Key>
+    <Property Name="MODULEID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="M_PARENTID" Type="Int32" />
+    <Property Name="M_CODE" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="M_CNAME" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="M_DIRECTORY" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="M_LEVEL" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
+    <Property Name="M_SORT" Type="Int32" />
+    <Property Name="M_CLOSE" Type="Int32" />
+    <Property Name="M_ICON" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MEMO_TEXT" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="EDIT_USER" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="EDIT_DATE" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="T_SYS_ROLEPERMISSION">
+    <Key>
+      <PropertyRef Name="PERMISSIONID" />
+    </Key>
+    <Property Name="PERMISSIONID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ROLEID" Type="Int32" />
+    <Property Name="MODULEID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="T_SYS_ROLES">
+    <Key>
+      <PropertyRef Name="ROLEID" />
+    </Key>
+    <Property Name="ROLEID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="R_ROLENAME" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="R_DESCRIPTION" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="MEMO_TEXT" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="EDIT_USER" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="EDIT_DATE" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="T_SYS_TABLEFIELDS">
+    <Key>
+      <PropertyRef Name="TABLEFIELDSID" />
+    </Key>
+    <Property Name="TABLEFIELDSID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TABLENAME" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="FIELDNAME" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CAPTION" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CANCHOOSE" Type="Int32" />
+    <Property Name="MEMO_TEXT" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="EDIT_USER" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="EDIT_DATE" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="T_SYS_USER">
+    <Key>
+      <PropertyRef Name="USERID" />
+    </Key>
+    <Property Name="USERID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="U_ACCOUNT" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="U_NAME" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="U_PASSWORD" Type="String" MaxLength="32" Unicode="false" FixedLength="false" />
+    <Property Name="U_PHONE" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+    <Property Name="U_EMAIL" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="U_ROLEID" Type="Int32" />
+    <Property Name="U_ROLENAME" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="U_TYPE" Type="Int32" />
+    <Property Name="U_STATUS" Type="Int32" />
+    <Property Name="CREATE_DATE" Type="DateTime" />
+    <Property Name="MEMO_TEXT" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="EDIT_USER" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="EDIT_DATE" Type="DateTime" />
+  </EntityType>
+</Schema>
