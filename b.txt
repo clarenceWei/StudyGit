@@ -1,8 +1,6 @@
-<<<<<<< HEAD
 9900990099
 ddd
 ddd0
-=======
 99009900990
 jjjjjjjjjjjjj
->>>>>>> master
+nnnnnnnnnnnn
